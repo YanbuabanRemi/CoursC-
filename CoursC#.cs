@@ -159,7 +159,8 @@ string nom = Console.ReadLine();
 
 ------------------------------------------------------------------- 1 - Encapsulation ---------------------------------------------------------------------- 
 
-// Définition : L’encapsulation signifie qu’un groupe de propriétés, méthodes et autres membres corrélés est traité comme une unité ou un objet unique.
+// L’encapsulation signifie qu’un groupe de propriétés, méthodes et autres membres corrélés est traité comme une unité ou un objet unique.
+// Il protège les données de l'objet et son fonctionnement interne
 
 
 ----------------- Les Class -----------------------------------------------------------------------------------------------------------
@@ -292,6 +293,9 @@ supprimer un element
 supprimer à un index
             maListe.RemoveAt(0);
 
+Rechercher un éléments et renvoyer son index
+			maListe.IndexOf("10");
+
 Afficher la liste
             foreach(int a in maListe)
             {
@@ -352,7 +356,25 @@ Pile<string> pile = new Pile<string>(10);
 
 ------------------------------------------------------------------- 2 - Héritage ---------------------------------------------------------------------- 
 
+// Creer un objet à partir d'un moule parent. Un objet "fils" est créer à partir d'un objet père, on dit alors que l’objet fils hérite de l’objet père
+// On dit également que l’objet fils est une spécialisation de l’objet père ou qu’il dérive de l’objet père.
+// Un objet ne peut pas hériter de plusieurs objet, l'héritage multiple est dont interdit en C#
 
 
 
-------------------------------------------------------------------- 3 - Polymorphisme ---------------------------------------------------------------------- 
+------------------------------------------------------------------- 3 - Polymorphisme ---------------------------------------------------------------------- .
+
+---------------------Ad hoc ou paramétré ---------------------------------
+// Polymorphisme "ad hoc" ou polymorphisme "paramétré" est le fait de pouvoir utiliser une même méthode ou toute action utilisant des paramètres différents
+// C'est la capacité pour un objet de faire un même action avec différetns types d'intervenants.
+// Par exemple, notre objet voiture peut rouler sur la route, rouler sur l’autoroute, rouler sur la terre si elle est équipée de pneus adéquats, rouler au fond de l’eau si elle est amphibie, etc …
+
+
+----------------------Héritage-----------------------------------------
+// Le polymorphisme par héritage est le fait de s'approprié une méthode ou toute action par héritage et de se l'approprié en fonciton de ses caractéristiques personnelles
+// Par exemple :Tous ces mammifères sont capables de se déplacer, mais chacun va le faire d’une manière différente. 
+// Ceci est donc possible grâce à la substitution qui permet de redéfinir un comportement hérité.
+// Ainsi, chaque fils sera libre de réécrire son propre comportement, si celui de son père ne lui convient pas.
+
+
+---------
