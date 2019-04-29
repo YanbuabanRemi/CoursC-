@@ -2,7 +2,9 @@
 
 Commenter = Ctrl + K + C  
 Décommenter = Ctrl + K + U  
-Alt + Entrer
+Complétion = Alt + Entrer
+Saut a la ligne = \n
+Tabulation + tiret = \t
 
 ------------------------------------------------------------------- Code ----------------------------------------------------------------------
 ------------------------------------------------------------------- 1 - Variables ----------------------------------------------------------------------
@@ -160,7 +162,7 @@ string nom = Console.ReadLine();
 // Définition : L’encapsulation signifie qu’un groupe de propriétés, méthodes et autres membres corrélés est traité comme une unité ou un objet unique.
 
 
------------------ Les Class ------------------
+----------------- Les Class -----------------------------------------------------------------------------------------------------------
 
 // Chaque classe peut avoir différents membres de classe : 
 // - des propriétés qui décrivent les données de classe
@@ -177,7 +179,7 @@ Voiture v1 = new Voiture("rouge", "ford");
 
 
 
-------------------Les attributs et propriétés
+------------------Les attributs et propriétés----------------------------------------------------------------------------
 
 // Les attributs et les propriétés et les champs sont des informations contenues dans un objet. Les champs sont similaires aux variables, car ils peuvent être lus ou définis directement.
 // Les attributs et les propriétés peuvent être en public ou private
@@ -195,7 +197,7 @@ private int idClient;
 //propriété
 public int IdClient { get => idClient; set => idClient = value; }
 
--------------------Les méthodes
+-------------------Les méthodes---------------------------------------------------------------------------------------------------------
 
 public void Rouler()
     {
@@ -214,7 +216,7 @@ public void SetCouleur(string c, string m)
            model = m;
         }
 
-----------------------Les constructeurs
+----------------------Les constructeurs----------------------------------------------------------------------------------
 
 public Voiture()
         {
@@ -240,8 +242,8 @@ public Voiture(string c, string m) : this(c)
 // - le constructeur public Voiture(string c, string m)
 
 
--------------------Les collections------------
-------------------Tableau---------------------
+-----------------------------------------Les collections--------------------------------------------------------------------------------------------
+------------------------------------------Tableau-------------------------------------------------------------------------
 
 //Un tableau doit toujours être defini en fonction de sa taille, la taille du tableau est donc prédéfini des le depart
 // Declare a single-dimensional array 
@@ -269,7 +271,7 @@ jaggedArray[0] = new int[4] { 1, 2, 3, 4 };
 // Les tableaux sont indexés sur zéro : un tableau avec n éléments est indexée de 0 à n-1.
 // Les éléments de tableau peuvent être de n’importe quel type, y compris un type tableau.
 
-------------------Liste------------------
+---------------------------------------------Liste-----------------------------------------------------------------------------------------
 
 List<int> maListe = new List<int>();
 // Le type de la liste est prédéfini dès le départ et ne peut être modifié
@@ -300,7 +302,7 @@ Trie les éléments de la liste
             maListe.Sort();
             
 
------------------------- Class Générique--------------
+------------------------------------------------ Class Générique-----------------------------------------------------------------------------
 
 // Permet de construire un objet générique en fonction de la caractéristique de T.
 //Les méthodes et les classes génériques combinent la réutilisabilité, la cohérence des types et l’efficacité, ce que ne peuvent pas faire leurs équivalents non génériques.
