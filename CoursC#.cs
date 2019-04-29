@@ -394,6 +394,28 @@ _____________________________________________________________________Ad hoc ou p
 // C'est la capacité pour un objet de faire un même action avec différetns types d'intervenants.
 // Par exemple, notre objet voiture peut rouler sur la route, rouler sur l’autoroute, rouler sur la terre si elle est équipée de pneus adéquats, rouler au fond de l’eau si elle est amphibie, etc …
 
+public class VoitureVolante
+	{
+		// La methode Avancer permet de définir dans cet exemple la façon dont la voiture avance, dans les airs, sur terre, etc
+		public void Avancer("air")
+		{
+
+		}
+		//La méthode Avancer permet de définir ici de combien de km la voiture avance
+		public void Avancer(50)
+		{
+			
+		}
+	}
+
+// La méthode Avancer est donc différente car elle utilise deux paramètres différents
+ 
+_______________________________________________________________________Héritage_____________________________________________________________________________
+// Le polymorphisme par héritage est le fait de s'approprié une méthode ou toute action par héritage et de se l'approprié en fonciton de ses caractéristiques personnelles
+// Par exemple :Tous ces mammifères sont capables de se déplacer, mais chacun va le faire d’une manière différente. 
+// Ceci est donc possible grâce à la substitution qui permet de redéfinir un comportement hérité.
+// Ainsi, chaque fils sera libre de réécrire son propre comportement, si celui de son père ne lui convient pas.
+
 //Défini la class Personne
 public  class Personne
     {
@@ -457,14 +479,6 @@ public  class Personne
         public void specialEtudiant()
         {
         }
-
-_______________________________________________________________________Héritage_____________________________________________________________________________
-// Le polymorphisme par héritage est le fait de s'approprié une méthode ou toute action par héritage et de se l'approprié en fonciton de ses caractéristiques personnelles
-// Par exemple :Tous ces mammifères sont capables de se déplacer, mais chacun va le faire d’une manière différente. 
-// Ceci est donc possible grâce à la substitution qui permet de redéfinir un comportement hérité.
-// Ainsi, chaque fils sera libre de réécrire son propre comportement, si celui de son père ne lui convient pas.
-
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------- Interfaces ----------------------------------------------------------------------------------------------
 
