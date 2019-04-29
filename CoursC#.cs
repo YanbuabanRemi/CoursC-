@@ -155,95 +155,7 @@ Console.ReadLine() = Lit la ligne
 Console.Write("Merci de saisir votre nom : ");
 string nom = Console.ReadLine();
 
-------------------------------------------------------------------- Programmation orienté objet ----------------------------------------------------------------------
-
-------------------------------------------------------------------- 1 - Encapsulation ---------------------------------------------------------------------- 
-
-// L’encapsulation signifie qu’un groupe de propriétés, méthodes et autres membres corrélés est traité comme une unité ou un objet unique.
-// Il protège les données de l'objet et son fonctionnement interne
-
-
-____________________________________________________________________________Les Class ______________________________________________________________________
-
-// Chaque classe peut avoir différents membres de classe : 
-// - des propriétés qui décrivent les données de classe
-// - des méthodes qui définissent le comportement de classe 
-// - des événements qui permettent la communication entre les différents objets et classes.
-
-// Création de class :
-Voiture v1 = new Voiture();
-v1.couleur = "rouge";
-v1.model = "Ford";
-v1.km = 20000;
-
-Voiture v1 = new Voiture("rouge", "ford");
-
-
-
-______________________________________________________________________Les attributs et propriétés__________________________________________________________________
-
-// Les attributs et les propriétés et les champs sont des informations contenues dans un objet. Les champs sont similaires aux variables, car ils peuvent être lus ou définis directement.
-// Les attributs et les propriétés peuvent être en public ou private
-
-public string couleur;
-public string model;
-public int km;
-private bool roule;
-
-// La méthode get set permet d'accéder au contenu de l'attribut
-// Alt + enter sur la propriété
-
-//attribut
-private int idClient;
-//propriété
-public int IdClient { get => idClient; set => idClient = value; }
-
-__________________________________________________________________________________Les méthodes____________________________________________________________________
-
-public void Rouler()
-    {
-        Console.WriteLine("Je roule " + model);
-    }
-
-// Les méthodes peuvent prendre un ou plusieurs paramètres
-
-public void SetCouleur(string c)
-        {
-           couleur = c;
-        }
-public void SetCouleur(string c, string m)
-        {
-           couleur = c;
-           model = m;
-        }
-
-_______________________________________________________________________________Les constructeurs____________________________________________________________________
-
-public Voiture()
-        {
-            Km = 1000;
-        }
-
-// On peut creer un constructeur à partir d'un constructeur déjà existant
-
-public Voiture(string toto) : this()
-        {
-            Couleur = toto;
-        }
-// this() fera reférance au constructeur Voiture() car this() ne contient aucune propriété
-
-public Voiture(string c, string m) : this(c)
-        {
-            Model = m;
-        }
-// this(c) fera reférance au constructeur Voiture(string toto) car il this(c) contient une seul propriété (c) comme dans le constructeur Voiture(string toto)
-// Le constructeur Voiture(string c, string m) construira la class d'abord par 
-// - le constructeur Voiture() puis
-// - le constructeur Voiture(string toto) puis
-// - le constructeur public Voiture(string c, string m)
-
-
-________________________________________________________________Les collections_____________________________________________________________
+-------------------------------------------------------------------5 Les collections-----------------------------------------------------------
 ___________________________________________________________________Tableau_______________________________________________________________
 
 //Un tableau doit toujours être defini en fonction de sa taille, la taille du tableau est donc prédéfini des le depart
@@ -304,6 +216,98 @@ Afficher la liste
 
 Trie les éléments de la liste            
             maListe.Sort();
+
+------------------------------------------------------------------- Programmation orienté objet ----------------------------------------------------------------------
+
+------------------------------------------------------------------- 1 - Encapsulation ---------------------------------------------------------------------- 
+
+// L’encapsulation signifie qu’un groupe de propriétés, méthodes et autres membres corrélés est traité comme une unité ou un objet unique.
+// Il protège les données de l'objet et son fonctionnement interne
+
+
+____________________________________________________________________________Les Classes ______________________________________________________________________
+
+// Chaque classe peut avoir différents membres de classe : 
+// - des propriétés qui décrivent les données de classe
+// - des méthodes qui définissent le comportement de classe 
+// - des événements qui permettent la communication entre les différents objets et classes.
+
+// Création de class :
+Voiture v1 = new Voiture();
+v1.couleur = "rouge";
+v1.model = "Ford";
+v1.km = 20000;
+
+Voiture v1 = new Voiture("rouge", "ford");
+
+
+
+______________________________________________________________________Les attributs et propriétés__________________________________________________________________
+
+// Les attributs, les propriétés et les champs sont des informations contenues dans un objet. Les champs sont similaires aux variables, car ils peuvent être lus ou définis directement.
+// Les attributs et les propriétés peuvent être en public ou private
+
+public string couleur;
+public string model;
+public int km;
+private bool roule;
+
+// La méthode get set permet d'accéder au contenu de l'attribut
+// Alt + enter sur la propriété
+
+//attribut
+private int idClient;
+//propriété
+public int IdClient { get => idClient; set => idClient = value; }
+
+__________________________________________________________________________________Les méthodes____________________________________________________________________
+
+public void Rouler()
+    {
+        Console.WriteLine("Je roule " + model);
+    }
+
+// Les méthodes peuvent prendre un ou plusieurs paramètres
+
+public void SetCouleur(string c)
+        {
+           couleur = c;
+        }
+public void SetCouleur1(string c, string m)
+        {
+           couleur = c;
+           model = m;
+        }
+
+_______________________________________________________________________________Les constructeurs____________________________________________________________________
+
+//Le constructeur est une méthode qui s'effectuera lors de la création de l'objet
+
+public Voiture()
+        {
+            Km = 1000;
+        }
+
+// On peut creer un constructeur à partir d'un constructeur déjà existant
+
+public Voiture(string toto) : this()
+        {
+            Couleur = toto;
+        }
+// this() fera reférance au constructeur Voiture() car this() ne contient aucune propriété
+
+public Voiture(string c, string m) : this(c)
+        {
+            Model = m;
+        }
+// this(c) fera reférance au constructeur Voiture(string toto) car this(c) contient une seul propriété (c) comme dans le constructeur Voiture(string toto)
+// Le constructeur Voiture(string c, string m) construira la class d'abord par 
+// - le constructeur Voiture() puis
+// - le constructeur Voiture(string toto) puis
+// - le constructeur public Voiture(string c, string m)
+
+
+
             
 _________________________________________________________________________ Class Générique______________________________________________________________________
 
@@ -390,6 +394,69 @@ _____________________________________________________________________Ad hoc ou p
 // C'est la capacité pour un objet de faire un même action avec différetns types d'intervenants.
 // Par exemple, notre objet voiture peut rouler sur la route, rouler sur l’autoroute, rouler sur la terre si elle est équipée de pneus adéquats, rouler au fond de l’eau si elle est amphibie, etc …
 
+//Défini la class Personne
+public  class Personne
+    {
+        protected string nom;
+        private string prenom;
+
+        public Personne()
+        {
+        }
+
+        public Personne(string n, string p)
+        {
+            Nom = n;
+            Prenom = p;
+        }
+
+        public virtual void Afficher()
+        {
+            Console.WriteLine(Nom + " " + Prenom);
+        }
+
+        public virtual void AfficherAvecNew()
+        {
+            Console.WriteLine("Avec new : " + Nom + " " + Prenom);
+        }
+    }
+
+// Défini la class Etudiant héritier de la classe Personne
+ public sealed class Etudiant : Personne
+    {
+        private string level;
+        public Etudiant()
+        {
+        }
+
+        // Le constructeur Etudiant hérite du constructeur Personne gràce à base(n, p)
+        // Lors de la construction d'un Etudiant, il va passer par la constructeur de Personne pour prendre le Nom et Prenom
+        // Puis passera par le constructeur de l'etudiant pour prendr le Level
+        public Etudiant(string n, string p, string l) : base(n,p)
+        {
+            Level = l;
+        }
+
+        // La méthode hérite de la méthode Afficher de Personne et ajoute une fonctionnalité en plus
+        // C'est le polymorphisme par héritage
+        public override void Afficher()
+        {
+            base.Afficher();
+            Console.WriteLine("Level : " + Level);    
+        }
+
+        // Dans cet exemple override et new sont identiques
+        // new permet d'utiliser seulement les méthodes du parents (à confirmer..)
+        public new void AfficherAvecNew()
+        {
+            base.AfficherAvecNew();
+            Console.WriteLine("Avec new Level : " + Level);
+        }
+
+        // Cette méthode est propre à la classe Etudiant et n'existe pas dans la classe Personne
+        public void specialEtudiant()
+        {
+        }
 
 _______________________________________________________________________Héritage_____________________________________________________________________________
 // Le polymorphisme par héritage est le fait de s'approprié une méthode ou toute action par héritage et de se l'approprié en fonciton de ses caractéristiques personnelles
@@ -405,6 +472,52 @@ _______________________________________________________________________Héritage
 // Liste les méthodes indispensables 
 // À noter que les interfaces ne fournissent qu’un contrat, elles ne fournissent pas d’implémentation c'est-à-dire pas de code C#. 
 // On peut implementer plusieurs interface à une classe
+// Orthographe conventionnel : INomDeLinterface
+
+//IVolant.cs
+public interface IVolant
+    {
+        string Nom { get; set; }
+        void Voler();
+    }
+
+// Implémenter une interface à une classe
+public class Avion : IVolant 
+{
+	private string nom;
+
+        public string Nom { get => nom; set => nom = value; }
+
+        public void Voler()
+        {
+            Console.WriteLine("Oiseau qui vole");
+        }
+}
+
+public class Avion : IVolant
+    {
+        private string nom;
+
+        public string Nom { get => nom; set => nom = value; }
+
+        public void Voler()
+        {
+            Console.WriteLine("Avion qui vole");
+        }
+    }
+
+// On peut mettre au sein d'une liste toutes les classes ayant la même interface
+List<IVolant> lVolants = new List<IVolant>();
+            IVolant o1 = new Oiseau();
+            IVolant a1 = new Avion();
+            lVolants.Add(o1);
+            lVolants.Add(a1);
+            
+            foreach(IVolant v in lVolants)
+            {
+                Console.WriteLine(v.GetType());
+                v.Voler();
+            }
 
 
 
