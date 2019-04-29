@@ -160,13 +160,84 @@ string nom = Console.ReadLine();
 // Définition : L’encapsulation signifie qu’un groupe de propriétés, méthodes et autres membres corrélés est traité comme une unité ou un objet unique.
 
 
-Les Class :
+----------------- Les Class ------------------
 
 // Chaque classe peut avoir différents membres de classe : 
 // - des propriétés qui décrivent les données de classe
 // - des méthodes qui définissent le comportement de classe 
 // - des événements qui permettent la communication entre les différents objets et classes.
 
+// Création de class :
+Voiture v1 = new Voiture();
+v1.couleur = "rouge";
+v1.model = "Ford";
+v1.km = 20000;
+
+Voiture v1 = new Voiture("rouge", "ford");
+
+
+
+------------------Les attributs et propriétés
+
+// Les attributs et les propriétés et les champs sont des informations contenues dans un objet. Les champs sont similaires aux variables, car ils peuvent être lus ou définis directement.
+// Les attributs et les propriétés peuvent être en public ou private
+
+public string couleur;
+public string model;
+public int km;
+private bool roule;
+
+// La méthode get set permet d'accéder au contenu de l'attribut
+// Alt + enter sur la propriété
+
+//attribut
+private int idClient;
+//propriété
+public int IdClient { get => idClient; set => idClient = value; }
+
+-------------------Les méthodes
+
+public void Rouler()
+    {
+        Console.WriteLine("Je roule " + model);
+    }
+
+// Les méthodes peuvent prendre un ou plusieurs paramètres
+
+public void SetCouleur(string c)
+        {
+           couleur = c;
+        }
+public void SetCouleur(string c, string m)
+        {
+           couleur = c;
+           model = m;
+        }
+
+----------------------Les constructeurs
+
+public Voiture()
+        {
+            Km = 1000;
+        }
+
+// On peut creer un constructeur à partir d'un constructeur déjà existant
+
+public Voiture(string toto) : this()
+        {
+            Couleur = toto;
+        }
+// this() fera reférance au constructeur Voiture() car this() ne contient aucune propriété
+
+public Voiture(string c, string m) : this(c)
+        {
+            Model = m;
+        }
+// this(c) fera reférance au constructeur Voiture(string toto) car il this(c) contient une seul propriété (c) comme dans le constructeur Voiture(string toto)
+// Le constructeur Voiture(string c, string m) construira la class d'abord par 
+// - le constructeur Voiture() puis
+// - le constructeur Voiture(string toto) puis
+// - le constructeur public Voiture(string c, string m)
 ------------------------------------------------------------------- 2 - Héritage ---------------------------------------------------------------------- 
 
 
