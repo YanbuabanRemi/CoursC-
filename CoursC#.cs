@@ -163,7 +163,7 @@ string nom = Console.ReadLine();
 // Il protège les données de l'objet et son fonctionnement interne
 
 
------------------ Les Class -----------------------------------------------------------------------------------------------------------
+____________________________________________________________________________Les Class ______________________________________________________________________
 
 // Chaque classe peut avoir différents membres de classe : 
 // - des propriétés qui décrivent les données de classe
@@ -180,7 +180,7 @@ Voiture v1 = new Voiture("rouge", "ford");
 
 
 
-------------------Les attributs et propriétés----------------------------------------------------------------------------
+______________________________________________________________________Les attributs et propriétés__________________________________________________________________
 
 // Les attributs et les propriétés et les champs sont des informations contenues dans un objet. Les champs sont similaires aux variables, car ils peuvent être lus ou définis directement.
 // Les attributs et les propriétés peuvent être en public ou private
@@ -198,7 +198,7 @@ private int idClient;
 //propriété
 public int IdClient { get => idClient; set => idClient = value; }
 
--------------------Les méthodes---------------------------------------------------------------------------------------------------------
+__________________________________________________________________________________Les méthodes____________________________________________________________________
 
 public void Rouler()
     {
@@ -217,7 +217,7 @@ public void SetCouleur(string c, string m)
            model = m;
         }
 
-----------------------Les constructeurs----------------------------------------------------------------------------------
+_______________________________________________________________________________Les constructeurs____________________________________________________________________
 
 public Voiture()
         {
@@ -243,8 +243,8 @@ public Voiture(string c, string m) : this(c)
 // - le constructeur public Voiture(string c, string m)
 
 
------------------------------------------Les collections--------------------------------------------------------------------------------------------
-------------------------------------------Tableau-------------------------------------------------------------------------
+________________________________________________________________Les collections_____________________________________________________________
+___________________________________________________________________Tableau_______________________________________________________________
 
 //Un tableau doit toujours être defini en fonction de sa taille, la taille du tableau est donc prédéfini des le depart
 // Declare a single-dimensional array 
@@ -272,7 +272,7 @@ jaggedArray[0] = new int[4] { 1, 2, 3, 4 };
 // Les tableaux sont indexés sur zéro : un tableau avec n éléments est indexée de 0 à n-1.
 // Les éléments de tableau peuvent être de n’importe quel type, y compris un type tableau.
 
----------------------------------------------Liste-----------------------------------------------------------------------------------------
+____________________________________________________________________________Liste__________________________________________________________________
 
 List<int> maListe = new List<int>();
 // Le type de la liste est prédéfini dès le départ et ne peut être modifié
@@ -305,11 +305,10 @@ Afficher la liste
 Trie les éléments de la liste            
             maListe.Sort();
             
-
------------------------------------------------- Class Générique-----------------------------------------------------------------------------
+_________________________________________________________________________ Class Générique______________________________________________________________________
 
 // Permet de construire un objet générique en fonction de la caractéristique de T.
-//Les méthodes et les classes génériques combinent la réutilisabilité, la cohérence des types et l’efficacité, ce que ne peuvent pas faire leurs équivalents non génériques.
+// Les méthodes et les classes génériques combinent la réutilisabilité, la cohérence des types et l’efficacité, ce que ne peuvent pas faire leurs équivalents non génériques.
 
 //pile.cs
 public class Pile<T>
@@ -358,23 +357,69 @@ Pile<string> pile = new Pile<string>(10);
 
 // Creer un objet à partir d'un moule parent. Un objet "fils" est créer à partir d'un objet père, on dit alors que l’objet fils hérite de l’objet père
 // On dit également que l’objet fils est une spécialisation de l’objet père ou qu’il dérive de l’objet père.
-// Un objet ne peut pas hériter de plusieurs objet, l'héritage multiple est dont interdit en C#
+// Un objet ne peut pas hériter de plusieurs objet, l'héritage multiple est dont interdit en C#, on utilise donc l'héritage en cascade
+// ex : A <---hérite---- B <-----hérite------ C <-------hérite-------- D
+// D hérite donc de A, B et C
+
+// Il existe 3 niveau d'accessibilité : 
+// - public : accessible a tous le monde
+// - protected : accessible à l'intérieur de la classe et à ses héritiers
+// - private : accessible seulement à l'intérieur de la classe
+public class Voiture {}
+protected class Moto {}
+private class Velo {}
+
+// abstract permet d'utiliser une classe de manière de référence mais ne peut être utiliser pour creer un objet 
+// Il est donc utiliser pour creer des enfants utilisant des caractéristiques commune
+public abstract class Avion {}
+
+// sealed permet de vérrouiller la classe et permet d'interdire le création de class enfant à partir de celle-ci (interdit l'héritage)
+public sealed class Helicoptere {}
+
+// La classe fils qui hérite de la classe père héritera de son type, de ses attributs, de ses propriètés, de ses méthodes mais pas de ses constructeurs.
+Avion a1 = new Avion();
+Velo v1 = new Velo("VTT", 2);
+
 
 
 
 ------------------------------------------------------------------- 3 - Polymorphisme ---------------------------------------------------------------------- .
 
----------------------Ad hoc ou paramétré ---------------------------------
+_____________________________________________________________________Ad hoc ou paramétré ___________________________________________________________________
 // Polymorphisme "ad hoc" ou polymorphisme "paramétré" est le fait de pouvoir utiliser une même méthode ou toute action utilisant des paramètres différents
 // C'est la capacité pour un objet de faire un même action avec différetns types d'intervenants.
 // Par exemple, notre objet voiture peut rouler sur la route, rouler sur l’autoroute, rouler sur la terre si elle est équipée de pneus adéquats, rouler au fond de l’eau si elle est amphibie, etc …
 
 
-----------------------Héritage-----------------------------------------
+_______________________________________________________________________Héritage_____________________________________________________________________________
 // Le polymorphisme par héritage est le fait de s'approprié une méthode ou toute action par héritage et de se l'approprié en fonciton de ses caractéristiques personnelles
 // Par exemple :Tous ces mammifères sont capables de se déplacer, mais chacun va le faire d’une manière différente. 
 // Ceci est donc possible grâce à la substitution qui permet de redéfinir un comportement hérité.
 // Ainsi, chaque fils sera libre de réécrire son propre comportement, si celui de son père ne lui convient pas.
 
 
----------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------- Interfaces ----------------------------------------------------------------------------------------------
+
+// L'interface permet de creer un "cahier des charges" que les classes doivent respecter
+// Liste les méthodes indispensables 
+// À noter que les interfaces ne fournissent qu’un contrat, elles ne fournissent pas d’implémentation c'est-à-dire pas de code C#. 
+// On peut implementer plusieurs interface à une classe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
