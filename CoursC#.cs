@@ -300,6 +300,53 @@ Trie les éléments de la liste
             maListe.Sort();
             
 
+------------------------ Class Générique--------------
+
+// Permet de construire un objet générique en fonction de la caractéristique de T.
+//Les méthodes et les classes génériques combinent la réutilisabilité, la cohérence des types et l’efficacité, ce que ne peuvent pas faire leurs équivalents non génériques.
+
+//pile.cs
+public class Pile<T>
+    {
+        private int nbMax;
+        private int index;
+        public int NbMax { get => nbMax; set => nbMax = value; }
+        public T[] tab;
+
+        public Pile(int nombre)
+        {
+            NbMax = nombre;
+            tab = new T[NbMax];
+            index = 0;
+        }
+        public void Empiler(T element)
+        {
+            if(index < NbMax)
+            {
+                tab[index] = element;
+                index++;
+            }
+            else
+            {
+                Console.WriteLine("Pile pleine");
+            }
+        } 
+        public void Depiler()
+        {
+            if(index-1 >= 0)
+            {
+                tab[index - 1] = default(T);
+                index--;
+            }
+        }
+    }
+
+//Programme.cs
+Pile<string> pile = new Pile<string>(10);
+            pile.Empiler("test");
+            pile.Empiler("coucou");
+            pile.Empiler("tata");
+            pile.Depiler();
 
 ------------------------------------------------------------------- 2 - Héritage ---------------------------------------------------------------------- 
 
