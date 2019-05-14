@@ -903,6 +903,9 @@ t2.Start(p1);
 
 // L'OS permute le token entre les threads de manière aléatoire
 
+t1.Join();
+// Attend la fin de t1 avant que le Tokken ne permute
+
 // Si on veut passer des paramètres dans une méthode qui va passer dans un thread, ce paramètre doit être de type objet
 Thread t1 = new Thread(Afficher);
 Thread t2 = new Thread(Afficher);
@@ -972,7 +975,21 @@ static void Afficher(object c)
 // - l'impossibilité d'agir sur l'état d'un thread
 // - l'impossibilité de renvoyer un résultat
 
+private static Mutex m1 = new Mutex();
 
+public void Add()
+        {
+            Task.Run(() =>
+            {
+                m1.WaitOne();
+                ...
+                m1.ReleaseMutex();
+            });          
+        }
+
+
+// A chaque fois que la fonction Add sera lancée, elle sera lancé dans un nouveau thread
+// Le Mutex permet que la methode finisse avant que le token ne soit distribuer a un autre thread
 
 
 
